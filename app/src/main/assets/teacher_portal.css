@@ -1,0 +1,21 @@
+/* A03: cosmetic Android-only teacher portal skin, injected only after teacher auth.
+   Never touch server files, form events or authorization. */
+html.msy-a03-native{background:#f7f9fe!important;color-scheme:light!important}
+html.msy-a03-native body{background:#f7f9fe!important}
+html.msy-a03-native .app-header,
+html.msy-a03-native #tabs,
+html.msy-a03-native #teacher-mobile-dock-v190,
+html.msy-a03-native .sidebar-v36,
+html.msy-a03-native .ui-brand-header-v42,
+html.msy-a03-native .dashboard-top-v36,
+html.msy-a03-native #uiBrandHeaderV42 {display:none!important}
+html.msy-a03-native .container{max-width:100%!important;padding:8px 10px 24px!important;margin:0!important}
+html.msy-a03-native #appView .dashboard-shell-v36,
+html.msy-a03-native #appView .dashboard-main-v36{display:block!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;min-width:0!important}
+html.msy-a03-native #appView #page{width:100%!important;max-width:100%!important;min-width:0!important;padding:0 0 26px!important}
+html.msy-a03-native .card{border:1px solid #e3eafa!important;border-radius:17px!important;box-shadow:0 5px 18px #1b3e7812!important;background:#fff!important}
+html.msy-a03-native .btn:not(.ghost){border-radius:11px!important;min-height:43px!important}
+html.msy-a03-native .badge{border-radius:10px!important}
+html.msy-a03-native input,html.msy-a03-native select,html.msy-a03-native textarea{border-radius:10px!important;min-height:43px}
+html.msy-a03-native table{background:#fff}html.msy-a03-native .table-wrap{overflow-x:auto;max-width:100%}
+@media(max-width:720px){html.msy-a03-native .grid{gap:10px!important}html.msy-a03-native .card{padding:13px!important}html.msy-a03-native .row{flex-wrap:wrap}html.msy-a03-native .modal{max-width:calc(100vw - 22px)!important}}

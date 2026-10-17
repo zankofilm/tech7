@@ -1,0 +1,158 @@
+/* MADRESEYAR A04 — authenticated-teacher Android presentation layer.
+ * Cosmetic-only: form names, data-* routes, submit handlers, permissions and
+ * source data are NEVER altered. No remote content or additional APIs.
+ */
+html.msy-a04-native {
+ --a04-navy:#1b3458; --a04-ink:#233a59;--a04-blue:#2467e9;
+ --a04-sky:#eaf2ff;--a04-bg:#f6f8ff;--a04-line:#e2eafb;
+ --a04-muted:#70829c;--a04-shadow:0 7px 22px rgba(27,63,127,.055);
+ --navy:#1b3458;--navy2:#296bdc;--blue:#2467e9;--cyan:#66b9fa;
+ --ink:#233a59;--muted:#70829c;--bg:#f6f8ff;--card:#fff;
+ --line:#e2eafb;--shadow:var(--a04-shadow);--radius:19px;
+ background:var(--a04-bg)!important;color-scheme:light!important;
+ direction:rtl!important;
+}
+html.msy-a04-native, html.msy-a04-native body,
+html.msy-a04-native #appView{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+html.msy-a04-native body{margin:0!important;min-height:100%!important;background:var(--a04-bg)!important;color:var(--a04-ink)!important;-webkit-tap-highlight-color:transparent}
+html.msy-a04-native #appView,html.msy-a04-native #page {background:var(--a04-bg)!important}
+/* The Android app owns its navigation; do not hide form actions/permission messages. */
+html.msy-a04-native .app-header,
+html.msy-a04-native #tabs,
+html.msy-a04-native #teacher-mobile-dock-v190,
+html.msy-a04-native .sidebar-v36,
+html.msy-a04-native .ui-brand-header-v42,
+html.msy-a04-native .dashboard-top-v36,
+html.msy-a04-native #uiBrandHeaderV42{display:none!important}
+html.msy-a04-native .container{width:100%!important;max-width:100%!important;margin:0!important;padding:0 12px 26px!important}
+html.msy-a04-native .dashboard-shell-v36,
+html.msy-a04-native .dashboard-main-v36,
+html.msy-a04-native #appView #page{display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0 0 26px!important;overflow:visible!important}
+html.msy-a04-native .grid{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:11px!important;min-width:0!important}
+html.msy-a04-native .grid > .col-3,
+html.msy-a04-native .grid > .col-4,
+html.msy-a04-native .grid > .col-5,
+html.msy-a04-native .grid > .col-6,
+html.msy-a04-native .grid > .col-7,
+html.msy-a04-native .grid > .col-8,
+html.msy-a04-native .grid > .col-9,
+html.msy-a04-native .grid > .col-12{grid-column:1/-1!important;min-width:0!important}
+html.msy-a04-native .row{min-width:0!important;max-width:100%!important;flex-wrap:wrap!important;gap:9px!important}
+html.msy-a04-native .row.between{align-items:flex-start!important}
+html.msy-a04-native .card,
+html.msy-a04-native .td2-card,
+html.msy-a04-native .panel-v36,
+html.msy-a04-native .question,
+html.msy-a04-native .builder-question,
+html.msy-a04-native .item,
+html.msy-a04-native .msy46-exam-card,
+html.msy-a04-native .v90-flow,
+html.msy-a04-native [class*='grading-card'],
+html.msy-a04-native [class*='homework-card']{width:auto;max-width:100%;min-width:0;background:#fff!important;border:1px solid var(--a04-line)!important;border-radius:20px!important;box-shadow:var(--a04-shadow)!important;padding:16px!important;margin-bottom:5px!important;overflow:visible}
+html.msy-a04-native .card h1, html.msy-a04-native .card h2,
+html.msy-a04-native .panel-v36 h2{color:var(--a04-navy)!important;line-height:1.75!important;letter-spacing:0!important;overflow-wrap:anywhere!important}
+html.msy-a04-native h1{font-size:21px!important}
+html.msy-a04-native h2{font-size:18px!important;margin:0 0 8px!important}
+html.msy-a04-native h3{font-size:15px!important;line-height:1.75!important}
+html.msy-a04-native p,html.msy-a04-native .sub,html.msy-a04-native small{line-height:1.9!important;overflow-wrap:anywhere!important}
+html.msy-a04-native .sub,html.msy-a04-native .muted{color:var(--a04-muted)!important}
+/* Every module gets the same compact Android chapter header. */
+html.msy-a04-native #msy-a04-section-header{display:flex!important;align-items:center!important;gap:12px!important;padding:18px 16px!important;margin:11px 0 14px!important;border-radius:22px!important;background:linear-gradient(120deg,#2468e6,#65b7f6)!important;color:#fff!important;box-shadow:0 12px 24px rgba(46,113,215,.18)!important;direction:rtl!important;min-height:92px}
+html.msy-a04-native #msy-a04-section-header .msy-a04-mark{display:grid;place-items:center;width:48px;height:48px;flex:0 0 48px;border-radius:16px;background:#ffffff29;font-size:25px;font-weight:800}
+html.msy-a04-native #msy-a04-section-header .msy-a04-headtext{min-width:0;flex:1}
+html.msy-a04-native #msy-a04-section-header h1{margin:0 0 3px!important;font-size:19px!important;color:white!important}
+html.msy-a04-native #msy-a04-section-header p{margin:0!important;color:#f6faff!important;font-size:11px!important;line-height:1.7!important}
+/* Core lists / cards / dashboards */
+html.msy-a04-native .list{gap:10px!important;min-width:0!important}
+html.msy-a04-native .item{padding:13px 14px!important}
+html.msy-a04-native .item-head{display:flex!important;align-items:flex-start!important;flex-wrap:wrap!important;gap:9px!important}
+html.msy-a04-native .badge,html.msy-a04-native .pill{border-radius:10px!important;padding:6px 10px!important;white-space:normal!important}
+html.msy-a04-native .badge.info{background:#e8f3ff!important;color:#23619a!important}
+html.msy-a04-native .notice,html.msy-a04-native .demo-box,html.msy-a04-native .rubric,html.msy-a04-native .ai-panel{max-width:100%!important;border-radius:15px!important}
+html.msy-a04-native .empty{border:1px dashed #cbdaef!important;background:#f9fbff!important;border-radius:16px!important;padding:21px 12px!important;color:var(--a04-muted)!important}
+html.msy-a04-native .stat-icon,html.msy-a04-native .kpi-icon-v36{border-radius:15px!important;background:#eaf2ff!important;color:#286ae7!important}
+html.msy-a04-native .teaching-hero-v33{display:none!important}
+html.msy-a04-native .teaching-card-v33{padding:15px!important;border-radius:19px!important}
+html.msy-a04-native .teaching-card-v33 > .row:first-child{display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important}
+html.msy-a04-native .teaching-card-v33 h2{font-size:17px!important;margin:0 0 5px!important}
+html.msy-a04-native .teaching-card-v33 .sub{font-size:12px!important;margin:0!important}
+html.msy-a04-native .teaching-card-v33 .teaching-meta-v33{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:12px 0!important}
+html.msy-a04-native .teaching-card-v33 .teaching-meta-v33 > span{border:1px solid #e4edfa!important;border-radius:12px!important;padding:9px 10px!important;background:#f9fbff!important;min-width:0!important;font-size:12px!important;overflow-wrap:anywhere!important}
+html.msy-a04-native .teaching-card-v33 .permission-text-v33{display:block!important;line-height:1.8!important;color:#6c829e!important;font-size:11px!important}
+html.msy-a04-native .teaching-card-v33 .btn{flex:1 1 43%!important;margin:0!important;min-width:0!important}
+/* All forms & input workflows: attendance, grades, exams, question bank, homework */
+html.msy-a04-native input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
+html.msy-a04-native select,html.msy-a04-native textarea{max-width:100%!important;min-width:0!important;width:100%!important;min-height:45px!important;border:1px solid #cbdaf0!important;background:#fff!important;color:#203a5e!important;border-radius:12px!important;outline-color:#4388ed!important;padding:10px 12px!important;font-size:14px!important;box-sizing:border-box!important}
+html.msy-a04-native textarea{min-height:112px!important;resize:vertical!important}
+html.msy-a04-native input:focus-visible,html.msy-a04-native select:focus-visible,
+html.msy-a04-native textarea:focus-visible,html.msy-a04-native button:focus-visible{outline:3px solid #91baff!important;outline-offset:2px!important}
+html.msy-a04-native input[type='checkbox'],html.msy-a04-native input[type='radio']{accent-color:#2467e9!important;width:19px!important;height:19px!important;flex-shrink:0!important}
+html.msy-a04-native .field{min-width:0!important;max-width:100%!important;margin:8px 0!important}
+html.msy-a04-native .field > span,html.msy-a04-native label{line-height:1.8!important}
+html.msy-a04-native .admin-filter-grid,html.msy-a04-native .msy46-filters,
+html.msy-a04-native .choice-grid,html.msy-a04-native .rubric-row,
+html.msy-a04-native [class*='filter-grid'],html.msy-a04-native .grade-switch-v4513,
+html.msy-a04-native .teacher-signature-grid-v40{display:grid!important;grid-template-columns:1fr!important;gap:9px!important;min-width:0!important;max-width:100%!important}
+html.msy-a04-native .btn,html.msy-a04-native button:not(.tab):not(.sidebar-tab-v36){font-family:inherit!important;max-width:100%!important;min-height:43px!important;border-radius:12px!important;font-size:13px!important;touch-action:manipulation!important;white-space:normal!important;overflow-wrap:anywhere!important}
+html.msy-a04-native .btn:not(.ghost):not(.danger):not(.outline):not(.secondary):not(.ok){background:#2467e9!important;color:#fff!important}
+html.msy-a04-native .btn.outline,html.msy-a04-native .btn.secondary{background:#f3f7ff!important;color:#2864ca!important;border:1px solid #c7d9f5!important}
+html.msy-a04-native .btn.danger{background:#ce3947!important;color:#fff!important}
+html.msy-a04-native .btn.ok{background:#188d73!important;color:#fff!important}
+html.msy-a04-native .toolbar{flex-wrap:wrap!important;gap:7px!important}
+html.msy-a04-native .toolbar .btn{flex:1 1 auto!important}
+html.msy-a04-native .question,.msy-a04-native .option{border-radius:15px!important}
+html.msy-a04-native .option{min-width:0!important;align-items:flex-start!important}
+/* Wide marksheets and item grids MUST keep all data/columns: scroll horizontally. */
+html.msy-a04-native .table-wrap,html.msy-a04-native .table-scroll,
+html.msy-a04-native [class*='table-wrap'],html.msy-a04-native [class*='table-scroll'],
+html.msy-a04-native .msy-a04-table-scroll{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-inline:contain!important;border:1px solid #e4ecf9!important;border-radius:15px!important;background:#fff!important}
+html.msy-a04-native table{width:max-content!important;min-width:100%!important;max-width:none!important;border-collapse:separate!important;border-spacing:0!important;color:var(--a04-ink)!important;background:#fff!important;white-space:normal!important}
+html.msy-a04-native th,html.msy-a04-native td{font-size:12px!important;padding:10px 9px!important;min-width:75px!important;line-height:1.7!important;vertical-align:middle!important;border-bottom:1px solid #e9eef8!important;word-break:normal!important}
+html.msy-a04-native th{background:#edf4ff!important;color:#355782!important;font-weight:800!important;position:sticky!important;top:0!important;z-index:1}
+html.msy-a04-native tr:nth-child(even) td{background:#f9fbff!important}
+html.msy-a04-native td .btn{min-height:38px!important;padding:7px 9px!important}
+html.msy-a04-native .msy46-table{min-width:640px!important}
+/* Mobile form dialogs: bottom sheet, without altering event handlers. */
+html.msy-a04-native .modal-backdrop{position:fixed!important;inset:0!important;z-index:110!important;background:rgba(16,35,66,.53)!important;padding:9px 6px 0!important;align-items:end!important;overflow:hidden!important}
+html.msy-a04-native .modal{width:100%!important;max-width:100%!important;max-height:93dvh!important;min-width:0!important;overflow-y:auto!important;background:#fff!important;box-shadow:0 -14px 35px rgba(19,39,75,.2)!important;border:1px solid #dce7f7!important;border-radius:22px 22px 0 0!important;padding:20px 15px 18px!important;overscroll-behavior:contain!important}
+html.msy-a04-native .modal.wide{width:100%!important}
+html.msy-a04-native .modal-actions{position:sticky!important;bottom:-18px!important;z-index:5!important;display:flex!important;flex-wrap:wrap!important;gap:8px!important;padding:12px 14px!important;margin:15px -15px -18px!important;background:#fff!important;border-top:1px solid #e2e9f4!important}
+html.msy-a04-native .modal-actions .btn{flex:1 1 40%!important}
+html.msy-a04-native .upload-box{background:#f6faff!important;border:2px dashed #b8cdf3!important;border-radius:15px!important;padding:21px 12px!important}
+/* Screens with a sticky floating chat bubble: keep it away from content and app dock. */
+html.msy-a04-native [class*='chat-float'],html.msy-a04-native [class*='floating-chat'],
+html.msy-a04-native [class*='chat-bubble'],html.msy-a04-native [class*='teacher-chat-fab'],
+html.msy-a04-native [id*='chatFloat'],html.msy-a04-native [id*='floatingChat']{bottom:18px!important;left:12px!important;right:auto!important;max-width:155px!important;transform:scale(.86)!important;transform-origin:bottom left!important}
+html.msy-a04-native #toastHost{bottom:17px!important;left:10px!important;right:10px!important;max-width:calc(100vw - 20px)!important}
+/* Other module families keep access and data, but inherit mobile grid rhythm. */
+html.msy-a04-native .v90-flow,html.msy-a04-native .v88-row,
+html.msy-a04-native .v89-row,html.msy-a04-native .v91-actions article,
+html.msy-a04-native .v92-risks article,
+html.msy-a04-native .msy46-exam-metrics,
+html.msy-a04-native .teacher-primary-grid-v15{grid-template-columns:1fr!important}
+html.msy-a04-native .v94-priority{grid-template-columns:28px minmax(0,1fr)!important}
+html.msy-a04-native .v64-staff-stats,html.msy-a04-native .kpi-grid-v36,
+html.msy-a04-native .teacher-kpis-v36{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+html.msy-a04-native [class*='exam-actions'],html.msy-a04-native [class*='grade-actions'],
+html.msy-a04-native [class*='action-row']{max-width:100%!important;flex-wrap:wrap!important}
+html.msy-a04-native img,html.msy-a04-native video,html.msy-a04-native canvas{max-width:100%!important;height:auto}
+html.msy-a04-native .chart{max-width:100%!important;overflow-x:auto!important}
+html.msy-a04-native .sticky-exam-head{top:0!important;z-index:4!important;border-radius:12px!important}
+@media (max-width:420px){html.msy-a04-native .container{padding:0 9px 22px!important}html.msy-a04-native .card{padding:13px!important}html.msy-a04-native #msy-a04-section-header{padding:15px 13px!important;margin-top:8px!important}html.msy-a04-native .teaching-card-v33 .teaching-meta-v33{grid-template-columns:1fr 1fr!important}}
+@media(min-width:720px){html.msy-a04-native #appView #page{max-width:730px!important;margin:0 auto!important}html.msy-a04-native .container{padding:0 18px 30px!important}}
+@media print{html.msy-a04-native .app-header,html.msy-a04-native #msy-a04-section-header{display:none!important}html.msy-a04-native .modal{max-height:none!important;border:0!important}html.msy-a04-native .table-wrap{overflow:visible!important}}
+
+html.msy-a04-native table.msy-a04-editable-table{display:block!important;width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;white-space:nowrap!important;border:1px solid #e4ecf9!important;border-radius:14px!important}
+
+/* "تمام ابزارها" must expose the actual legacy teacher navigation, not hide it. */
+html.msy-a04-native.msy-a04-fulltools .sidebar-v36{display:block!important;position:static!important;width:100%!important;min-width:0!important;max-width:100%!important;height:auto!important;overflow:visible!important;margin:0 0 10px!important;padding:10px!important;background:#fff!important;border:1px solid var(--a04-line)!important;border-radius:16px!important;box-shadow:none!important}
+html.msy-a04-native.msy-a04-fulltools #tabs{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important;gap:6px!important;overflow:visible!important;max-height:none!important;height:auto!important;opacity:1!important;visibility:visible!important}
+html.msy-a04-native.msy-a04-fulltools #tabs .tab,
+html.msy-a04-native.msy-a04-fulltools #tabs .sidebar-tab-v36{display:inline-flex!important;position:static!important;align-items:center!important;flex:1 1 43%!important;width:auto!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:43px!important;padding:8px!important;border-radius:12px!important;background:#f1f6ff!important;color:#285eaf!important;border:1px solid #d7e5fc!important}
+html.msy-a04-native.msy-a04-fulltools #tabs .tab.active{background:#2367e9!important;color:#fff!important}
+html.msy-a04-native.msy-a04-fulltools #tabs .nav-label-v36{display:inline!important;min-width:0!important;white-space:normal!important;opacity:1!important;visibility:visible!important}
+html.msy-a04-native.msy-a04-fulltools .dashboard-shell-v36{display:block!important}
+/* These content blocks contain real actions; never suppress them. */
+html.msy-a04-native .teacher-official-v15{padding:12px!important;border:1px solid #e3eafb!important;border-radius:18px!important;background:#fff!important;margin-bottom:10px!important}
+html.msy-a04-native .teacher-primary-grid-v15{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+html.msy-a04-native .teacher-primary-v15{min-width:0!important;min-height:65px!important;padding:10px!important}

@@ -1,0 +1,23 @@
+{
+  "version": "A04.0-test",
+  "base": "A03-FIX01",
+  "changed": [
+    "app/src/main/java/ir/scooljavanrood/madreseyar/teacher/MainActivity.java",
+    "app/src/main/assets/teacher_mobile_a04.css",
+    "app/src/main/assets/teacher_mobile_a04.js",
+    "app/build.gradle",
+    ".github/workflows/build-debug-apk.yml"
+  ],
+  "server_changed": false,
+  "database_changed": false,
+  "build_tested": false,
+  "android_device_tested": false,
+  "browser_simulation_checks": 16,
+  "sha256": {
+    "app/src/main/java/ir/scooljavanrood/madreseyar/teacher/MainActivity.java": "78c1f5c60f098a3eb57f65eb5648085ab8736271031962492bdeef7b134f4c75",
+    "app/src/main/assets/teacher_mobile_a04.css": "eebc343605bb277ea722121431cb8d459430a44308cb2216ab587e7adf73863e",
+    "app/src/main/assets/teacher_mobile_a04.js": "f5502611d8f8344a9f4e683f1cb7455e3b7b3e11edd9770c8be33c7507bfef23",
+    "app/build.gradle": "8b4703ab78f883d17b29fc4d21baa4dca8079cc97558c548d09b96e433fa05b5",
+    ".github/workflows/build-debug-apk.yml": "ab937974cd3b8b045be98c8c930738cabe42e172bde70e798c66a8db2c5378c3"
+  }
+}
